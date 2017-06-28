@@ -1,0 +1,92 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+   </head>
+
+
+ <style>
+ body {
+ font-family:'roboto';
+ 
+ }
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=designation]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    max-width:500px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+</style>
+
+
+<body>
+<form align="center" action = "/addMemberData" method = "post" role="form" th:method="post" th:action="@{/addMemberData}" th:object="${member}">
+<table align="center" cellpadding="3">
+
+
+<tr><td>Name: 	&nbsp; 	&nbsp; </td><td><input id = "name" name = "name" type="text" th:value="*{name}" /><br></td></tr>
+<tr><td>Ph Number:	&nbsp; 	&nbsp; </td><td><input id = "number" name = "number" type="number" th:value="*{number}" length=10/><br></td></tr>
+<tr><td>User Type:	&nbsp; 	&nbsp; </td> <td><select id = "type" name = "type" align="left" th:value="*{type}" type= "text" width="30">
+<option value="select" disabled="disabled" selected="selected">Select</option><option value="founder">Founder</option>
+<option value="trust">Trust Board</option></select><br></td></tr>
+<tr><td>Designation:	&nbsp; 	&nbsp; </td><td><input id = "designation" name = "designation" type="designation" th:value="*{designation}"/><br></td></tr>
+<tr><td>URL : 	&nbsp; 	&nbsp; </td><td><input id = "url" name = "url" type="text" th:value="*{url}"/><br></td></tr>
+
+
+<!-- <tr><td><input id = "createDateTime" name = "createDateTime" type="hidden" th:value="*{createDateTime}"/><br></td></tr>
+<tr><td><input id = "updateDateTime" name = "updateDateTime" type="hidden" th:value="*{updateDateTime}"/><br></td></tr> -->
+
+</td></tr></table>
+<br>
+<br>
+<input type="submit" value="Submit" class="button"/>
+
+
+
+
+</form>
+</body>
+</html>

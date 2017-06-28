@@ -1,0 +1,78 @@
+<html>
+<head>
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+ </head>
+<style>
+body {
+ font-family:'roboto';
+ 
+ }
+.wrapper {
+    text-align: center;
+	padding: 15px 32px;
+	text-align: center;
+	background-color: #eeeeee;
+}
+
+.gosala{
+        background-color:blue;
+		
+}
+select {
+    width: 30%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #9e9e9e;
+    color: white;
+}
+.button
+{ 
+  align:center;
+
+}
+
+#demo {
+
+height: 70%;
+
+}
+
+</style>
+<script >
+	function run(){
+		var e = document.getElementById("mydropdown");
+		var value = e.options[e.selectedIndex].value;
+		
+		if(value == "data") {
+			document.getElementById("demo").innerHTML='<object type="text/html" width="600px"  height="600px" data="addgosaladata.html" ></object>';
+		} 
+		else if(value == "members") {
+			document.getElementById("demo").innerHTML='<object type="text/html" width="600px"  height="600px" data="addmembers.html" ></object>';
+		}else if(value == "gallery") {
+			document.getElementById("demo").innerHTML='<object type="text/html" width="600px"  height="600px" data="gallery.html" ></object>';
+		}  
+	}
+	
+</script>
+
+<body>
+	
+<div class="wrapper" class="dropdown" class="text">
+
+<h1 align='center'>Goshala</h1>
+
+ Choose : 	&nbsp; 	&nbsp;<select id="mydropdown"  onchange="run()">
+
+<option value="select" disabled="disabled" selected="selected">Select</option>
+<option value="data">Add Data</option>
+<option value="members">Add Members</option>
+<option value="gallery">Gallery</option>
+
+</select>
+
+</div>
+<div id="demo" align="center"></div>
+</body>
+</html>

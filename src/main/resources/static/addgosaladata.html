@@ -1,0 +1,94 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+ <style>
+ 
+ body {
+ font-family:'roboto';
+ 
+ }
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=designation]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    max-width:500px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+</style>
+
+
+
+
+<body>
+
+<form align="center" action = "/addGosalaData" method = "post" role="form" th:method="post" th:action="@{/addGosalaData}" th:object="${godata}">
+
+<table  align="center" cellpadding="2" >
+<tr><td>Choose: 	&nbsp; 	&nbsp; </td><td><select id = "page" name = "page"  th:value="*{page}" type= "text" >
+ <option value="select" disabled="disabled" selected="selected">Select</option>
+  
+  <option value="home">Home</option>
+  <option value="aboutus">About Us</option>
+  <option value="ouraim">Our Aim</option>
+    <option value="cowprotection">Cow Protection</option>
+	<option value="donateus">Donate Us</option>
+	 <option value="cotactus">Cotact Us</option>
+	 
+</select></td></tr>
+<tr><td>Text: 	&nbsp; 	&nbsp;</td>
+<td><textarea align="left" name ="text" rows="5" cols="40" id = "text" type="text" th:value="*{text}" ></textarea></td></tr>
+<tr><td>URL: 	&nbsp; 	&nbsp;</td><td> <input align="left" id = "url" name = "url" type="text" th:value="*{url}"></td></tr></table>
+<br>
+<br>
+<input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

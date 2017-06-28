@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:if="${response.message} != 'OK'">
+    	<h1 th:text="'ERROR: ' + ${response.message}"></h1>
+	</div>
+	<div th:if="${response.message} == 'OK'">
+    	<h1 th:text="${response.payload}"></h1>
+	</div>
+	
+</body>
+</html>

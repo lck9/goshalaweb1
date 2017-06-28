@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+<style>
+body {
+ font-family:'roboto';
+ 
+ }
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    max-width:500px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+</style>
+
+<body>
+<form align="center" action = "/addGalleryData" method = "post" role="form" th:method="post" th:action="@{/addGalleryData}" th:object="${gallery}">
+<table  cellpadding="2" align="center" style="padding:10px; text-align:center;" >
+<tr><td>URL : 	&nbsp; 	&nbsp;</td>
+<td>
+<input id = "url" name="url" type="text" th:value="*{url}"/>
+</td>
+</tr>
+</table>
+<br>
+<input type="submit"  value="Submit"/>
+</form>
+</body>
+</html>
